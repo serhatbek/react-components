@@ -32,6 +32,7 @@ const Select = ({ defaultValue, options, onChange }) => {
           return (
             <li key={useId()} onClick={() => handleSelectOption(item.value)}>
               {item.label}
+              {item.label === selectedOption && <Icon size={32} icon='check' />}
             </li>
           );
         })}

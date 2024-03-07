@@ -31,74 +31,82 @@
   content: "\f104";
   }
 
-  %icon-chevron-down {
+  %icon-check {
   content: "\f105";
+  }
+
+  .icon-check:before {
+  content: "\f105";
+  }
+
+  %icon-chevron-down {
+  content: "\f106";
   }
 
   .icon-chevron-down:before {
-  content: "\f105";
+  content: "\f106";
   }
 
   %icon-chevron-left-square {
-  content: "\f106";
+  content: "\f107";
   }
 
   .icon-chevron-left-square:before {
-  content: "\f106";
+  content: "\f107";
   }
 
   %icon-chevron-right-square {
-  content: "\f107";
+  content: "\f108";
   }
 
   .icon-chevron-right-square:before {
-  content: "\f107";
+  content: "\f108";
   }
 
   %icon-chevron-up-circle {
-  content: "\f108";
+  content: "\f109";
   }
 
   .icon-chevron-up-circle:before {
-  content: "\f108";
+  content: "\f109";
   }
 
   %icon-chevron-up {
-  content: "\f109";
+  content: "\f10a";
   }
 
   .icon-chevron-up:before {
-  content: "\f109";
+  content: "\f10a";
   }
 
   %icon-info {
-  content: "\f10a";
+  content: "\f10b";
   }
 
   .icon-info:before {
-  content: "\f10a";
+  content: "\f10b";
   }
 
   %icon-menu-close {
-  content: "\f10b";
+  content: "\f10c";
   }
 
   .icon-menu-close:before {
-  content: "\f10b";
+  content: "\f10c";
   }
 
   %icon-menu-open {
-  content: "\f10c";
+  content: "\f10d";
   }
 
   .icon-menu-open:before {
-  content: "\f10c";
+  content: "\f10d";
   }
 
   %icon-x-close {
-  content: "\f10d";
+  content: "\f10e";
   }
 
   .icon-x-close:before {
-  content: "\f10d";
+  content: "\f10e";
   }

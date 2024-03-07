@@ -18,6 +18,9 @@
     display: none;
     > li {
       padding: 15px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
       &:hover {
         color: c.$light-one;
