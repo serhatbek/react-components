@@ -1,17 +1,26 @@
-import { useId, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import './Select.scss';
 import Icon from '../Icon/Icon';
 import classNames from 'classnames';
 import handleClickOutside from '../../utils/handleClickOutside';
 
 const Select = ({ defaultValue, options, onChange }) => {
-  const [selectedItem, setSelectedItem] = useState(defaultValue || '');
+  const [selectedItems, setSelectedItems] = useState(defaultValue || []);
   const [showList, setShowList] = useState(false);
   const selectRef = useRef(null);
 
+  console.log('selectedItems 🩷🩷🩷', selectedItems);
+
   const handleSelection = (optionValue) => {
-    setSelectedItem(optionValue);
-    onChange(selectedItem);
+    setSelectedItems((prevItems) => {
+      const isSelected = prevItems.includes(optionValue);
+      if (isSelected) {
+        return prevItems.filter((item) => item.id !== optionValue.id);
+      } else {
+        return [...prevItems, optionValue];
+      }
+    });
+    onChange(selectedItems);
   };
 
   const toggleSelectList = () => {
@@ -27,7 +36,14 @@ const Select = ({ defaultValue, options, onChange }) => {
   return (
     <div className='select' ref={selectRef}>
       <div className='select__item' onClick={toggleSelectList}>
-        {selectedItem}{' '}
+        <div>
+          {selectedItems?.map((item) => (
+            <span key={item.id} className='selected-tag'>
+              {item.label}
+              <Icon size={20} icon='x-close' />
+            </span>
+          ))}
+        </div>
         <Icon size={32} icon={showList ? 'chevron-up' : 'chevron-down'} />
       </div>
       <ul
@@ -38,9 +54,12 @@ const Select = ({ defaultValue, options, onChange }) => {
       >
         {options?.map((item) => {
           return (
-            <li key={useId()} onClick={() => handleSelection(item.value)}>
+            <li key={item.id} onClick={() => handleSelection(item)}>
               {item.label}
-              {item.label === selectedItem && <Icon size={32} icon='check' />}
+              {/* {item.label === selectedItems && <Icon size={32} icon='check' />} */}
+              {selectedItems?.find(
+                (itemInArray) => itemInArray.id === item.id
+              ) && <Icon size={32} icon='check' />}
             </li>
           );
         })}
@@ -50,3 +69,50 @@ const Select = ({ defaultValue, options, onChange }) => {
 };
 
 export default Select;
+
+// const Select = ({ defaultValue, options, onChange }) => {
+//   const [selectedItem, setSelectedItem] = useState(defaultValue || '');
+//   const [showList, setShowList] = useState(false);
+//   const selectRef = useRef(null);
+
+//   const handleSelection = (optionValue) => {
+//     setSelectedItem(optionValue);
+//     onChange(selectedItem);
+//   };
+
+//   const toggleSelectList = () => {
+//     setShowList(!showList);
+//   };
+
+//   const closeSelectList = () => {
+//     setShowList(false);
+//   };
+
+//   handleClickOutside(selectRef, closeSelectList);
+
+//   return (
+//     <div className='select' ref={selectRef}>
+//       <div className='select__item' onClick={toggleSelectList}>
+//         {selectedItem}{' '}
+//         <Icon size={32} icon={showList ? 'chevron-up' : 'chevron-down'} />
+//       </div>
+//       <ul
+//         className={classNames(
+//           'select__list',
+//           `${showList ? 'select__list--visible' : ''}`
+//         )}
+//       >
+//         {options?.map((item) => {
+//           return (
+//             <li key={id} onClick={() => handleSelection(item.value)}>
+//               {item.label}
+//               {item.label === selectedItem && <Icon size={32} icon='check' />}
+//             </li>
+//           );
+//         })}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default Select;
