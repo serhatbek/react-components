@@ -31,17 +31,20 @@
     <glyph glyph-name="chevron-up-circle"
       unicode="&#xF108;"
       horiz-adv-x="24" d=" M12 22C6.486 22 2 17.514 2 12S6.486 2 12 2S22 6.486 22 12S17.514 22 12 22zM16.293 9.293L12 13.586L7.707 9.293L6.293 10.707L12 16.414L17.707 10.707L16.293 9.293z" />
-    <glyph glyph-name="info"
+    <glyph glyph-name="chevron-up"
       unicode="&#xF109;"
+      horiz-adv-x="24" d=" M6.293 10.707L7.707 9.293L12 13.586L16.293 9.293L17.707 10.707L12 16.414z" />
+    <glyph glyph-name="info"
+      unicode="&#xF10A;"
       horiz-adv-x="24" d=" M12 22C6.486 22 2 17.514 2 12S6.486 2 12 2S22 6.486 22 12S17.514 22 12 22zM13 7H11V13H13V7zM13 15H11V17H13V15z" />
     <glyph glyph-name="menu-close"
-      unicode="&#xF10A;"
+      unicode="&#xF10B;"
       horiz-adv-x="24" d=" M12 22C6.486 22 2 17.514 2 12S6.486 2 12 2S22 6.486 22 12S17.514 22 12 22zM16.207 9.207L14.793 7.793L12 10.586L9.207 7.793L7.793 9.207L10.586 12L7.793 14.793L9.207 16.207L12 13.414L14.793 16.207L16.207 14.793L13.414 12L16.207 9.207z" />
     <glyph glyph-name="menu-open"
-      unicode="&#xF10B;"
+      unicode="&#xF10C;"
       horiz-adv-x="24" d=" M4 18H20V16H4zM4 13H20V11H4zM4 8H20V6H4z" />
     <glyph glyph-name="x-close"
-      unicode="&#xF10C;"
+      unicode="&#xF10D;"
       horiz-adv-x="24" d=" M12 22C6.486 22 2 17.514 2 12S6.486 2 12 2S22 6.486 22 12S17.514 22 12 22zM16.207 9.207L14.793 7.793L12 10.586L9.207 7.793L7.793 9.207L10.586 12L7.793 14.793L9.207 16.207L12 13.414L14.793 16.207L16.207 14.793L13.414 12L16.207 9.207z" />
   </font>
 </defs>

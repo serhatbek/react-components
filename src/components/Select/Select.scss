@@ -6,12 +6,16 @@
     border-radius: 8px;
     border: 1px solid c.$brown-two;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__list {
     border-radius: 8px;
     border: 1px solid c.$brown-two;
     overflow: hidden;
+    display: none;
     > li {
       padding: 15px 10px;
 
@@ -19,6 +23,10 @@
         color: c.$light-one;
         background-color: c.$blue-two;
       }
+    }
+
+    &--visible {
+      display: block;
     }
   }
 }

@@ -5,7 +5,7 @@ const Icon = ({ icon, className, size, onClick }) => {
   return (
     <i
       className={classNames('icon', 'icon-' + icon, className)}
-      style={{ fontSize: `${size}` }}
+      style={{ fontSize: `${size}px` }}
       onClick={onClick}
     ></i>
   );

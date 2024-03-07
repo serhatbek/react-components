@@ -63,34 +63,42 @@
   content: "\f108";
   }
 
-  %icon-info {
+  %icon-chevron-up {
   content: "\f109";
+  }
+
+  .icon-chevron-up:before {
+  content: "\f109";
+  }
+
+  %icon-info {
+  content: "\f10a";
   }
 
   .icon-info:before {
-  content: "\f109";
+  content: "\f10a";
   }
 
   %icon-menu-close {
-  content: "\f10a";
+  content: "\f10b";
   }
 
   .icon-menu-close:before {
-  content: "\f10a";
+  content: "\f10b";
   }
 
   %icon-menu-open {
-  content: "\f10b";
+  content: "\f10c";
   }
 
   .icon-menu-open:before {
-  content: "\f10b";
+  content: "\f10c";
   }
 
   %icon-x-close {
-  content: "\f10c";
+  content: "\f10d";
   }
 
   .icon-x-close:before {
-  content: "\f10c";
+  content: "\f10d";
   }
