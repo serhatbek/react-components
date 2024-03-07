@@ -12,7 +12,7 @@ const Select = ({ defaultValue, options, onChange }) => {
   return (
     <div className='select'>
       <div className='select__item'>{selectedOption}</div>
-      <ul className='select__List'>
+      <ul className='select__list'>
         {options?.map((item) => {
           return (
             <li key={useId()} onClick={() => handleSelectOption(item.value)}>
