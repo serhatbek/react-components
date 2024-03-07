@@ -43,16 +43,19 @@ const Select = ({ defaultValue, options, onChange }) => {
     <div className='select' ref={selectRef}>
       <div className='select__item' onClick={toggleSelectList}>
         <div>
-          {selectedItems?.map((item) => (
-            <span
-              key={item.id}
-              className='selected-tag'
-              onClick={() => deleteSelected(item.id)}
-            >
-              {item.label}
-              <Icon size={20} icon='x-close' />
-            </span>
-          ))}
+          {selectedItems?.map(
+            (item) =>
+              item.label !== '' && (
+                <span
+                  key={item.id}
+                  className='selected-tag'
+                  onClick={() => deleteSelected(item.id)}
+                >
+                  {item.label}
+                  <Icon size={20} icon='x-close' />
+                </span>
+              )
+          )}
         </div>
         <Icon size={32} icon={showList ? 'chevron-up' : 'chevron-down'} />
       </div>

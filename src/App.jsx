@@ -13,7 +13,7 @@ function App() {
         <h2>Select</h2>
         <div className='container'>
           <Select
-            defaultValue={[{ id: 0, label: 'Cherries' }]}
+            defaultValue={[{ id: 0, label: '' }]}
             onChange={handleChange}
             options={fruitsData}
           />
