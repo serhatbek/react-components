@@ -3,19 +3,22 @@ import { fruitsData } from './assets/data/fruits';
 import { Select } from './components';
 
 function App() {
-  const handleChange = (option) => {
-    console.log('selected item', option);
+  const handleChange = (selectedItem) => {
+    console.log('selected item', selectedItem);
   };
 
   return (
     <>
-      <div className='container'>
-        <Select
-          defaultValue='Choose A Fruit'
-          onChange={handleChange}
-          options={fruitsData}
-        />
-      </div>
+      <section className='section'>
+        <h2>Select</h2>
+        <div className='container'>
+          <Select
+            defaultValue='Choose A Fruit'
+            onChange={handleChange}
+            options={fruitsData}
+          />
+        </div>
+      </section>
     </>
   );
 }

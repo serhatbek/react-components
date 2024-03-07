@@ -1,25 +1,33 @@
-import { useId, useState } from 'react';
+import { useId, useRef, useState } from 'react';
 import './Select.scss';
 import Icon from '../Icon/Icon';
 import classNames from 'classnames';
+import handleClickOutside from '../../utils/handleClickOutside';
 
 const Select = ({ defaultValue, options, onChange }) => {
-  const [selectedOption, setSelectedOption] = useState(defaultValue || '');
+  const [selectedItem, setSelectedItem] = useState(defaultValue || '');
   const [showList, setShowList] = useState(false);
+  const selectRef = useRef(null);
 
-  const handleSelectOption = (optionValue) => {
-    setSelectedOption(optionValue);
-    onChange(selectedOption);
+  const handleSelection = (optionValue) => {
+    setSelectedItem(optionValue);
+    onChange(selectedItem);
   };
 
   const toggleSelectList = () => {
     setShowList(!showList);
   };
 
+  const closeSelectList = () => {
+    setShowList(false);
+  };
+
+  handleClickOutside(selectRef, closeSelectList);
+
   return (
-    <div className='select'>
+    <div className='select' ref={selectRef}>
       <div className='select__item' onClick={toggleSelectList}>
-        {selectedOption}{' '}
+        {selectedItem}{' '}
         <Icon size={32} icon={showList ? 'chevron-up' : 'chevron-down'} />
       </div>
       <ul
@@ -30,9 +38,9 @@ const Select = ({ defaultValue, options, onChange }) => {
       >
         {options?.map((item) => {
           return (
-            <li key={useId()} onClick={() => handleSelectOption(item.value)}>
+            <li key={useId()} onClick={() => handleSelection(item.value)}>
               {item.label}
-              {item.label === selectedOption && <Icon size={32} icon='check' />}
+              {item.label === selectedItem && <Icon size={32} icon='check' />}
             </li>
           );
         })}
