@@ -23,6 +23,12 @@ const Select = ({ defaultValue, options, onChange }) => {
     onChange(selectedItems);
   };
 
+  const deleteSelected = (id) => {
+    setSelectedItems((prevItems) => {
+      return prevItems.filter((item) => item.id !== id);
+    });
+  };
+
   const toggleSelectList = () => {
     setShowList(!showList);
   };
@@ -38,7 +44,11 @@ const Select = ({ defaultValue, options, onChange }) => {
       <div className='select__item' onClick={toggleSelectList}>
         <div>
           {selectedItems?.map((item) => (
-            <span key={item.id} className='selected-tag'>
+            <span
+              key={item.id}
+              className='selected-tag'
+              onClick={() => deleteSelected(item.id)}
+            >
               {item.label}
               <Icon size={20} icon='x-close' />
             </span>
@@ -58,7 +68,7 @@ const Select = ({ defaultValue, options, onChange }) => {
               {item.label}
               {selectedItems?.find(
                 (itemInArray) => itemInArray.id === item.id
-              ) && <Icon size={32} icon='check' />}
+              ) && <Icon size={20} icon='check' />}
             </li>
           );
         })}
@@ -105,7 +115,7 @@ export default Select;
 //           return (
 //             <li key={id} onClick={() => handleSelection(item.value)}>
 //               {item.label}
-//               {item.label === selectedItem && <Icon size={32} icon='check' />}
+//               {item.label === selectedItem && <Icon size={20} icon='check' />}
 //             </li>
 //           );
 //         })}
