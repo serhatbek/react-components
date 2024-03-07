@@ -1,0 +1,12 @@
+.icon {
+  line-height: 1;
+  display: inline-block;
+}
+
+.icon:before {
+  font-family: bepay !important;
+  font-style: normal;
+  font-weight: normal !important;
+  vertical-align: top;
+  font-size: inherit;
+}

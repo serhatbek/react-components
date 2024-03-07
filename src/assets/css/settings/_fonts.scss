@@ -1,0 +1,45 @@
+$uniqeid: unique_id();
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('fonts/Quicksand-Light.ttf?v=#{$uniqeid}') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand-Regular.ttf?v=#{$uniqeid}') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand-Medium.ttf?v=#{$uniqeid}') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand-SemiBold.ttf?v=#{$uniqeid}') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand-Bold.ttf?v=#{$uniqeid}') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'bepay';
+  src: url('/fonts/bepay.ttf?v=#{$uniqeid}') format('truetype');
+}

@@ -5,7 +5,7 @@ iconfontMaker(
     files: ['src/assets/icons/*.svg'],
     types: ['ttf'],
     order: ['ttf'],
-    fontName: 'bepay',
+    fontName: 'react-components',
     dest: 'public/fonts/',
     cssDest: 'src/assets/css/settings/_icons-extend.scss',
     cssTemplate: 'src/tasks/iconTemp.hbs',
