@@ -40,6 +40,6 @@ $uniqeid: unique_id();
 }
 
 @font-face {
-  font-family: 'bepay';
-  src: url('/fonts/bepay.ttf?v=#{$uniqeid}') format('truetype');
+  font-family: 'react-components';
+  src: url('/fonts/react-components.ttf?v=#{$uniqeid}') format('truetype');
 }
