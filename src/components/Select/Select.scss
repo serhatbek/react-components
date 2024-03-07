@@ -14,9 +14,17 @@
     justify-content: space-between;
 
     > div {
+      width: 100%;
+      display: flex;
+
       .selected-tag {
         display: flex;
         align-items: center;
+        margin-right: 5px;
+        padding: 5px;
+        color: c.$light-one;
+        background-color: c.$blue-four;
+        border-radius: 20px;
 
         .icon {
           margin-left: 5px;

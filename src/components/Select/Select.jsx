@@ -56,7 +56,6 @@ const Select = ({ defaultValue, options, onChange }) => {
           return (
             <li key={item.id} onClick={() => handleSelection(item)}>
               {item.label}
-              {/* {item.label === selectedItems && <Icon size={32} icon='check' />} */}
               {selectedItems?.find(
                 (itemInArray) => itemInArray.id === item.id
               ) && <Icon size={32} icon='check' />}
