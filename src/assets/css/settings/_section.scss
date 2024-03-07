@@ -1,0 +1,15 @@
+.section {
+  padding: 100px 0;
+  text-align: center;
+
+  > h2 {
+    margin-bottom: 30px;
+  }
+
+  &-select {
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

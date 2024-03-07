@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <section className='section'>
+      <section className='section section-select'>
         <h2>Select</h2>
         <div className='container'>
           <Select
