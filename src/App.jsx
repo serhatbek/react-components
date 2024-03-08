@@ -1,11 +1,19 @@
+import { useState } from 'react';
 import './assets/css/styles.scss';
 import { fruitsData } from './assets/data/fruits';
 import { Select } from './components';
 
 function App() {
-  const handleChange = (selectedItem) => {
-    console.log('selected item', selectedItem);
+  const [fruitSelectItems, setFruitSelectItems] = useState([
+    'Cherries',
+    'Nuts',
+  ]);
+
+  const handleSelectItems = (selectedItems) => {
+    setFruitSelectItems((prevItems) => [...prevItems, selectedItems]);
   };
+
+  console.log(fruitSelectItems);
 
   return (
     <>
@@ -13,8 +21,8 @@ function App() {
         <h2>Select</h2>
         <div className='container'>
           <Select
-            defaultValue={[{ id: 0, label: '' }]}
-            onChange={handleChange}
+            defaultValue={fruitSelectItems}
+            onChange={handleSelectItems}
             options={fruitsData}
           />
         </div>
