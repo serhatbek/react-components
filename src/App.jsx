@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './assets/css/styles.scss';
-import { fruitsData } from './assets/data/fruits';
-import { MultiSelect } from './components';
+import { fruitsData, cartoonData } from './assets/data/data';
+import { MultiSelect, SingleSelect } from './components';
 
 function App() {
   const [fruitSelectItems, setFruitSelectItems] = useState([
@@ -10,21 +10,38 @@ function App() {
     { id: 6, label: 'Watermelon' },
   ]);
 
-  const handleSelectItems = (selectedItems) => {
+  const [cartoonSelectItem, setCartoonSelectItem] = useState('TMNT');
+
+  const handleMultiSelectItems = (selectedItems) => {
     setFruitSelectItems((prevItems) => [...prevItems, selectedItems]);
+    // console.log(fruitSelectItems);
   };
 
-  console.log(fruitSelectItems);
+  const handleSingleSelectItems = (selectedItem) => {
+    setCartoonSelectItem(selectedItem);
+    // console.log(selectedItem);
+  };
 
   return (
     <>
       <section className='section section-select'>
-        <h2>Select</h2>
+        <h2>Multiple Select</h2>
         <div className='container'>
           <MultiSelect
             defaultValue={fruitSelectItems}
-            onChange={handleSelectItems}
+            onChange={handleMultiSelectItems}
             options={fruitsData}
+          />
+        </div>
+      </section>
+
+      <section className='section section-select'>
+        <h2>Single Select</h2>
+        <div className='container'>
+          <SingleSelect
+            defaultValue={cartoonSelectItem}
+            onChange={handleSingleSelectItems}
+            options={cartoonData}
           />
         </div>
       </section>
