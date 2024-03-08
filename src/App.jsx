@@ -10,7 +10,7 @@ function App() {
     { id: 6, label: 'Watermelon' },
   ]);
 
-  const [cartoonSelectItem, setCartoonSelectItem] = useState('TMNT');
+  const [cartoonSelectItem, setCartoonSelectItem] = useState('');
 
   const handleMultiSelectItems = (selectedItems) => {
     setFruitSelectItems((prevItems) => [...prevItems, selectedItems]);

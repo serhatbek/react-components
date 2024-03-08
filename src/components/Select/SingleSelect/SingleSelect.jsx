@@ -26,10 +26,10 @@ const SingleSelect = ({ defaultValue, options, onChange }) => {
   handleClickOutside(selectRef, closeSelectList);
 
   return (
-    <FloatLabel>
+    <FloatLabel label='Choose a cartoon' value={selectedItem}>
       <div className='select' ref={selectRef}>
         <div className='select__item' onClick={toggleSelectList}>
-          {selectedItem}{' '}
+          <div>{selectedItem}</div>
           <Icon size={32} icon={showList ? 'chevron-up' : 'chevron-down'} />
         </div>
         <ul
