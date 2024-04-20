@@ -10,6 +10,8 @@ const SingleSelect = ({ defaultValue, options, onChange }) => {
   const [showList, setShowList] = useState(false);
   const selectRef = useRef(null);
 
+  console.log(selectedItem);
+
   const handleSelection = (optionValue) => {
     setSelectedItem(optionValue);
     onChange(selectedItem);
